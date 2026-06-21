@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mongo-pvc
-  namespace: chat-app
+  name: mongodb-pvc
+  namespace: chatapp-production
 spec:
+  storageClassName: ""
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
-  storageClassName: standard

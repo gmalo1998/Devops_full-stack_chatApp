@@ -13,6 +13,9 @@ FROM nginx:alpine
 RUN mkdir -p /var/cache/nginx /var/run /var/log/nginx && \
     chown -R nginx:nginx /var/cache/nginx /var/run /var/log/nginx
 
+# Set environment variables
+ENV NODE_ENV=production
+
 # Copy built files and configuration
 COPY --from=build /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
